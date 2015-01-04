@@ -70,6 +70,7 @@ platform_check_image() {
 	psr-680w | \
 	px4885 | \
 	rp-n53 | \
+	rp-wd02 | \
 	rt-g32-b1 | \
 	rt-n10-plus | \
 	rt-n13u | \

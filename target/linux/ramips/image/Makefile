@@ -500,6 +500,8 @@ Image/Build/Profile/HLKRM04=$(call BuildFirmware/HLKRM04/$(1),$(1),hlk-rm04,HLKR
 
 Image/Build/Profile/HT-TM02=$(call BuildFirmware/Default8M/$(1),$(1),ht-tm02,HT-TM02)
 
+Image/Build/Profile/RP-WD02=$(call BuildFirmware/Default8M/$(1),$(1),rp-wd02,RP-WD02)
+
 Image/Build/Profile/M3=$(call BuildFirmware/Poray4M/$(1),$(1),m3,M3)
 
 Image/Build/Profile/M4=$(call BuildFirmware/PorayDualSize/$(1),$(1),m4,M4)
@@ -684,6 +686,7 @@ define Image/Build/Profile/Default
 	$(call Image/Build/Profile/PSR-680W,$(1))
 	$(call Image/Build/Profile/PWH2004,$(1))
 	$(call Image/Build/Profile/PX4885,$(1))
+	$(call Image/Build/Profile/RP-WD02,$(1))
 	$(call Image/Build/Profile/RTG32B1,$(1))
 	$(call Image/Build/Profile/RTN10PLUS,$(1))
 	$(call Image/Build/Profile/RT-N13U,$(1))

@@ -244,6 +244,9 @@ ramips_board_detect() {
 	*"Asus RP-N53")
 		name="rp-n53"
 		;;
+	*"Ravpower RP-WD02")
+		name="rp-wd02"
+		;;
 	*"Ralink MT7620a + MT7530 evaluation board")
 		name="mt7620a_mt7530"
 		;;
