@@ -1,10 +1,10 @@
 /dts-v1/;
 
-/include/ "rt3352.dtsi"
+/include/ "rt5350.dtsi"
 
 / {
-	compatible = "DIR-620-D1", "ralink,rt3352-soc";
-	model = "D-Link DIR-620 D1";
+	compatible = "RP-WD02", "ralink,rt5350-soc";
+	model = "RAVPOWER RP-WD02";
 
 	palmbus@10000000 {
 		spi@b00 {
@@ -39,26 +39,6 @@
 					label = "firmware";
 					reg = <0x50000 0x7b0000>;
 				};
-			};
-		};
-	};
-
-	pinctrl {
-		state_default: pinctrl0 {
-			gpio {
-				ralink,group = "i2c", "jtag", "uartf";
-				ralink,function = "gpio";
-			};
-			rgmii {
-				ralink,group = "rgmii";
-				ralink,function = "rgmii";
-			};
-			mdio {
-				ralink,group = "mdio";
-				ralink,function = "mdio";
-			};
-		};
-	};
 
 	ethernet@10100000 {
 		mtd-mac-address = <&factory 0x4>;
@@ -75,12 +55,20 @@
 	gpio-leds {
 		compatible = "gpio-leds";
 		status {
-			label = "d-link:green:status";
+			label = "rp-wd02:green:status";
 			gpios = <&gpio0 9 1>;
 		};
 		wifi {
-			label = "d-link:green:wifi";
+			label = "rp-wd02:blue:wifi";
 			gpios = <&gpio0 17 1>;
+		};
+		power {
+			label = "rp-wd02:red:power";
+			gpios = <&gpio0 0 1>;
+		};
+		system {
+			label = "rp-wd02:green:system";
+			gpios = <&gpio0 20 1>;
 		};
 	};
 
@@ -89,9 +77,9 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 		poll-interval = <20>;
-		reset_wps {
-			label = "reset_wps";
-			gpios = <&gpio0 7 1>;
+		wps {
+			label = "reset";
+			gpios = <&gpio0 0 1>;
 			linux,code = <0x198>;
 		};
 	};
