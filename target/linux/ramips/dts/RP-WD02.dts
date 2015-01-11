@@ -39,6 +39,8 @@
 					label = "firmware";
 					reg = <0x50000 0x7b0000>;
 				};
+		};
+	};
 
 	ethernet@10100000 {
 		mtd-mac-address = <&factory 0x4>;
@@ -92,3 +94,5 @@
 		status = "okay";
 	};
 };
+};
+
